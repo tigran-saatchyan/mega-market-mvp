@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cartumart"
+version = "0.1.0"
+description = ""
+authors = ["Tigran Saatchyan TSA <mr.saatchyan@yandex.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

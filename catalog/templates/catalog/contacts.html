@@ -1,0 +1,43 @@
+{% extends "catalog/base.html" %}
+{% block title %}Contacts{% endblock %}
+{% block menu_contact_active %}active{% endblock %}
+{% block header %}
+    <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Контакты</h1>
+            <p class="fs-5 text-body-secondary">Вы находитесь на странице, предназначенной для контактной информации</p>
+        </div>
+    </header>
+{% endblock %}
+{% block main %}
+    <main class="row align-items-start scroll">
+        <div class="row text-center justify-content-md-center">
+            <div class="col-5">
+                <div class="card py-2">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="exampleInputText1" class="form-label">Имя</label>
+                            <input type="text" name="name"
+                                    class="form-control" id="exampleInputText1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">ЕПошта</label>
+                            <input type="email"
+                                    name="email"
+                                    class="form-control" id="exampleInputEmail1">
+                        </div>
+                                                <div class="mb-3">
+                            <label for="exampleTextArea1" class="form-label">Сообщение</label>
+                            <textarea name="message"
+                                    class="form-control" rows="6" id="exampleTextArea1"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
