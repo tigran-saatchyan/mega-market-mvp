@@ -1,5 +1,16 @@
 {% load static %}
 <style>
+    main {
+        top: 50px;
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh !important;
+        height: -webkit-fill-available;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+    }
+
     @font-face {
         font-family: Poppins-Regular;
         src: url({% static 'catalog/fonts/Poppins-Regular.ttf' %})

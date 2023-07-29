@@ -4,13 +4,14 @@ main {
     height: 100vh;
     height: -webkit-fill-available;
     max-height: calc(100vh - 137px);
+    position: absolute;
+    bottom: 0;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
 .container {
-    display: flex;
-    margin: auto !important;
+
 
 }
 
@@ -27,6 +28,7 @@ main {
     left: 280px;
     height: 100vh;
     width: calc(100vw - 280px);
+    bottom: 0;
 }
 
 body {
@@ -73,9 +75,62 @@ body {
     object-fit: cover;
 }
 
+#picture__input {
+    display: none;
+}
+
+.picture {
+    width: 400px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+}
+
+.picture:hover {
+    color: #777;
+    background: #ccc;
+}
+
+.picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+}
+
+.picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+    max-width: 100%;
+}
+
+.scale {
+    transition: 1s; /* Время эффекта */
+}
+
+.scale:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
 .card_size {
     min-width: 352px;
     max-width: 352px;
-    min-height: 400px;
+    min-height: 502px;
+    max-height: 502px;
 }
 
+.card {
+    box-shadow: 12px 4px 8px 0 rgba(0, 0, 0, 0.2), 12px 18px 20px 0 rgba(0, 0, 0, 0.19);
+}

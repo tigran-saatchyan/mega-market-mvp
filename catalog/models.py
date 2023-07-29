@@ -7,7 +7,19 @@ NULLABLE: Dict[str, bool] = {'blank': True, 'null': True}
 
 
 def save_picture(model, picture):
-    return f"product/{model.pk}_{picture}"
+    my_date = str(datetime.now().isoformat())
+    picture_name = "".join(
+        [
+            "".join(picture.split('.')[:-1]),
+            my_date,
+            ".",
+            picture.split('.')[-1]
+        ]
+    )
+    if isinstance(model, Product):
+        return f"product/{model.pk}/{model.pk}_{picture_name}"
+    elif isinstance(model, Category):
+        return f"category/{model.pk}/{model.pk}_{picture_name}"
 
 
 class Category(models.Model):
@@ -17,8 +29,13 @@ class Category(models.Model):
         unique=True
     )
     description: str = models.CharField(
-        max_length=100,
         verbose_name='description'
+    )
+
+    image: str = models.ImageField(
+        verbose_name='image',
+        upload_to=save_picture,
+        **NULLABLE
     )
 
     class Meta:
@@ -30,7 +47,7 @@ class Category(models.Model):
         return self.name
 
     def __repr__(self) -> str:
-        return f'Category'
+        return f'Category(name: {self.name})'
 
 
 class Product(models.Model):
@@ -39,8 +56,7 @@ class Product(models.Model):
         max_length=100
     )
     description: str = models.TextField(
-        verbose_name='description',
-        max_length=100
+        verbose_name='description'
     )
     image: str = models.ImageField(
         verbose_name='image',

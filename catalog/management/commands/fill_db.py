@@ -94,8 +94,7 @@ class Command(BaseCommand):
         for product in product_list:
             try:
                 category_id = product.pop('category')
-                category_instance = category_mapping[category_id]
-                product['category'] = category_instance
+                product['category'] = category_mapping[category_id]
                 products_to_create.append(Product(**product))
             except KeyError as e:
                 print(

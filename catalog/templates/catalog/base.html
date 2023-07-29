@@ -12,7 +12,6 @@
             rel="stylesheet">
     <link href="{% static 'catalog/css/style.css' %}"
             rel="stylesheet">
-
 </head>
 <body>
 {% include 'catalog/includes/inc_svg.html' %}
@@ -20,93 +19,95 @@
     <div class="container">
         <div class="row m-0 p-0">
             <div class="col-sm-3 sidebar">
-                    <h1 class="visually-hidden">Меню</h1>
-
-                    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
-                        <a href="/"
-                                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32">
-                                <use xlink:href="#bootstrap"/>
-                            </svg>
-                            <span class="fs-4">Меню</span>
-                        </a>
-                        <hr>
-                        <ul class="nav nav-pills flex-column mb-auto">
-                            <li class="nav-item">
-                                <a href="/" class="nav-link text-white {% block menu_main_active %}{% endblock %}"
-                                        aria-current="page">
-                                    <svg class="bi me-2" width="16" height="16">
-                                        <use xlink:href="#home"/>
-                                    </svg>
-                                    Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                        class="nav-link text-white {% block menu_category_active %}{% endblock %}">
-                                    <svg class="bi me-2" width="16" height="16">
-                                        <use xlink:href="#speedometer2"/>
-                                    </svg>
-                                    Категории
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                        class="nav-link text-white {% block menu_orders_active %}{% endblock %}">
-                                    <svg class="bi me-2" width="16" height="16">
-                                        <use xlink:href="#table"/>
-                                    </svg>
-                                    Заказы
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/contacts"
-                                        class="nav-link text-white {% block menu_contact_active %}{% endblock %}">
-                                    <svg class="bi me-2" width="16" height="16">
-                                        <use xlink:href="#people-circle"/>
-                                    </svg>
-                                    Контакты
-                                </a>
-                            </li>
-                        </ul>
-                        <hr>
-                        <div class="dropdown">
-                            <a href="#"
-                                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://avatars.githubusercontent.com/u/117544809?v=4" alt="" width="32"
-                                        height="32"
-                                        class="rounded-circle me-2">
-                                <strong>Пользователь</strong>
+                <h1 class="visually-hidden">Меню</h1>
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
+                    <a href="/"
+                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32">
+                            <use xlink:href="#bootstrap"/>
+                        </svg>
+                        <span class="fs-4">Меню</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-white {% block menu_main_active %}{% endblock %}"
+                                    aria-current="page">
+                                <svg class="bi me-2" width="16" height="16">
+                                    <use xlink:href="#home"/>
+                                </svg>
+                                Главная
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                                    aria-labelledby="dropdownUser1">
-                                <li><a class="dropdown-item" href="#">Профиль</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Выход</a></li>
-                            </ul>
-                        </div>
+                        </li>
+                        <li>
+                            <a href="/categories"
+                                    class="nav-link text-white {% block menu_category_active %}{% endblock %}">
+                                <svg class="bi me-2" width="16" height="16">
+                                    <use xlink:href="#speedometer2"/>
+                                </svg>
+                                Категории
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products"
+                                    class="nav-link text-white {% block menu_product_active %}{% endblock %}">
+                                <svg class="bi me-2" width="16" height="16">
+                                    <use xlink:href="#bi-bag-check"/>
+                                </svg>
+                                Продукты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white {% block menu_orders_active %}{% endblock %}">
+                                <svg class="bi me-2" width="16" height="16">
+                                    <use xlink:href="#table"/>
+                                </svg>
+                                Заказы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contacts"
+                                    class="nav-link text-white {% block menu_contacts_active %}{% endblock %}">
+                                <svg class="bi me-2" width="16" height="16">
+                                    <use xlink:href="#people-circle"/>
+                                </svg>
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://avatars.githubusercontent.com/u/117544809?v=4" alt="" width="32"
+                                    height="32"
+                                    class="rounded-circle me-2">
+                            <strong>Пользователь</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">Профиль</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Выход</a></li>
+                        </ul>
                     </div>
+                </div>
 
             </div>
             <div class="col-sm-9 content position-fixed">
                 <div class="row">
-
                     {% block header %}{% endblock %}
                     {% block main %}{% endblock %}
                 </div>
             </div>
         </div>
     </div>
-
-
 </main>
 
 <script src="{% static 'catalog/js/bootstrap.bundle.min.js' %}"></script>
 <script src="https://kit.fontawesome.com/0342c62d8d.js" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
 <script>
     /* global bootstrap: false */
     (function () {

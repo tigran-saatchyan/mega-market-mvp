@@ -20,31 +20,33 @@
                 <div class="col my-3 d-flex justify-content-center">
                     <div class="card border border-primary shadow-1 card_size">
                         <div class="image-container shadow-1">
-                            <img src="{% if product.image %}
+                            <a href="/products/{{ product.id }}">
+                                <img src="{% if product.image %}
                             {{ product.image | media_path }}
                             {% else %}
                                 https://placehold.co/350x250
-                            {% endif %}" class="img-fluid"/>
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                            {% endif %}" class="img-fluid scale"/>
                             </a>
                         </div>
 
                         <div class="card-body">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <p class="card-text">
-                                {{ product.description | truncatewords:100 }}
+                                {{ product.description | truncatewords:15 }}
                             </p>
 
-                            <button type="button" class="btn btn-primary">Button</button>
+                            <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title=""
+                                    data-original-title="Add to cart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                            <button class="btn btn-primary btn-rounded">Buy Now</button>
                         </div>
-                        <div class="card-footer">2 days ago</div>
+                        <div class="card-footer">{{ product.creation_date | date }}</div>
                     </div>
                 </div>
             {% endfor %}
 
-                {% include 'catalog/includes/inc_footer.html' %}
-
+            {% include 'catalog/includes/inc_footer.html' %}
 
         </div>
     </main>
