@@ -1,288 +1,336 @@
 [
-{
-  "model": "catalog.category",
-  "pk": 1,
-  "fields": {
-    "name": "Gaming",
-    "description": "All about gaming"
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Gaming",
+      "description": "Welcome to the immersive world of gaming! Experience adrenaline-pumping action, epic adventures, and boundless entertainment with our extensive gaming collection. Whether you're a seasoned gamer or a novice exploring this realm, our curated selection of gaming consoles, accessories, and games will keep you enthralled for hours on end. Embrace the thrill of cutting-edge technology and delve into virtual worlds that push the boundaries of reality.",
+      "image": "category/1/1_gaming-setup-pictures-hvu5j14rywodpuhz2023-07-29T100357.942944.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Books",
+      "description": "Step into the realm of literature and embark on extraordinary journeys with our vast collection of books. From timeless classics that have shaped generations to contemporary masterpieces that challenge perspectives, our shelves hold the wonders of the written word. Immerse yourself in the depths of imagination, unravel mysteries, and explore new worlds. Get lost in the magic of storytelling, where every turn of a page unveils a new adventure.",
+      "image": "category/2/2_book2023-07-29T100403.971322.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Electronics",
+      "description": "Stay ahead in the ever-evolving world of technology with our cutting-edge electronics range. From sleek smartphones to smart home gadgets, our collection offers innovative solutions to elevate your daily life. Discover gadgets that enhance connectivity, productivity, and entertainment. Embrace the power of modern electronics, where ingenuity meets convenience, and possibilities become limitless.",
+      "image": "category/3/3_Buy-Electronic-Products2023-07-29T100409.385872.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Clothing",
+      "description": "Define your style and express yourself with our fashion-forward clothing collection. Explore a diverse array of trendy apparel that reflects your unique personality and taste. From casual chic to sophisticated elegance, our clothing range promises comfort and confidence. Each garment is a canvas for self-expression, where you can create your own sartorial story and make a statement.",
+      "image": "category/4/4_cloth2023-07-29T100415.499237.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Home Decor",
+      "description": "Transform your living space into an oasis of beauty and serenity with our exquisite home decor collection. Discover captivating accents, elegant furnishings, and artistic accessories that infuse life into your surroundings. Each piece is crafted to bring harmony and sophistication to your home. Elevate your interior aesthetics and create a haven that exudes your personal style and reflects the essence of you.",
+      "image": "category/5/5_decore2023-07-29T100421.200819.png"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Fitness",
+      "description": "Unleash the best version of yourself with our comprehensive fitness equipment and accessories. Whether you're a fitness enthusiast or a health-conscious individual, our range of tools will help you achieve your goals. From state-of-the-art gym equipment to versatile accessories, we provide the resources to enhance your physical well-being. Embrace an active lifestyle and take charge of your fitness journey with us.",
+      "image": "category/6/6_functional-fitness-main-15155136032023-07-29T100517.488254.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Toys",
+      "description": "Fuel the wonder and joy of childhood with our captivating and educational toy selection. From creative building blocks to interactive puzzles, our toys ignite imagination and promote cognitive development. Watch as kids explore, learn, and play in a world of their own creation. Embrace the power of playtime, where laughter, curiosity, and learning come together.",
+      "image": "category/7/7_toy2023-07-29T100524.451693.jpg"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "Sports",
+      "description": "Embrace the spirit of competition and athleticism with our top-quality sports equipment. Whether you're a seasoned athlete or a sports enthusiast, we have the gear to enhance your performance. From adrenaline-pumping team sports to individual challenges, our sports collection offers a diverse range of equipment. Elevate your game and experience the thrill of victory with us.",
+      "image": "category/8/8_sport2023-07-29T100531.070709.jpg"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "PS4",
+      "description": "Immerse yourself in a realm of breathtaking gaming experiences with the Sony PS4. From heart-pounding action to emotionally immersive storytelling, the PS4 offers a vast library of games that cater to all tastes. This powerful gaming console delivers cutting-edge graphics and seamless gameplay, elevating your entertainment to new heights. Unlock the world of possibilities with the PS4 and embark on unforgettable gaming adventures.",
+      "image": "product/1/1_64626054772023-07-29T093608.404974.jpg",
+      "category": 1,
+      "purchase_price": 400,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "PS5",
+      "description": "Experience gaming like never before with the Sony PS5. This next-generation console takes gaming to new heights with stunning visuals, lightning-fast load times, and immersive gameplay. Whether you're an avid gamer or a multimedia enthusiast, the PS5 offers an unparalleled entertainment experience. Discover a world of possibilities and dive into epic adventures with the PS5.",
+      "image": "",
+      "category": 1,
+      "purchase_price": 700,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "The Great Gatsby",
+      "description": "Indulge in F. Scott Fitzgerald's literary masterpiece, The Great Gatsby. Dive into the extravagant world of the 1920s, filled with opulence, romance, and societal intricacies. Follow the enigmatic Jay Gatsby as he seeks to recapture the love of his life, Daisy Buchanan. A timeless tale of longing, passion, and the American Dream, The Great Gatsby remains an enduring classic that continues to captivate readers of all ages.",
+      "image": "product/3/3_the-great-gatsby-cast-wallpaper-1-compressor2023-07-29T094210.508950.jpg",
+      "category": 2,
+      "purchase_price": 20,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "To Kill a Mockingbird",
+      "description": "Delve into Harper Lee's classic novel, To Kill a Mockingbird. Set in the racially charged Southern United States, the story follows young Scout Finch as she navigates the complexities of prejudice and morality. With her father, Atticus Finch, as a moral compass, Scout learns valuable lessons about empathy and understanding. A powerful and moving narrative, To Kill a Mockingbird remains a thought-provoking masterpiece.",
+      "image": "product/4/4_TKAMB-header2023-07-29T094104.026492.jpg",
+      "category": 2,
+      "purchase_price": 18,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Smartphone",
+      "description": "Discover the ultimate smartphone experience with our high-end smartphone. Packed with cutting-edge technology and powerful performance, this device keeps you connected and productive on the go. From capturing stunning photos to multitasking with ease, our smartphone empowers you to navigate life effortlessly. Embrace the future of communication and stay ahead in the digital age with our premium smartphone.",
+      "image": "product/5/5_SET68i_22023-07-29T094024.541219.jpg",
+      "category": 3,
+      "purchase_price": 800,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "T-Shirt",
+      "description": "Experience the epitome of comfort and style with our premium cotton T-Shirt. Crafted with the finest materials and attention to detail, this wardrobe essential offers versatility for any occasion. Whether you're dressing up or keeping it casual, our T-Shirt ensures you always look effortlessly chic. Elevate your fashion game and embrace the perfect blend of fashion and comfort with our timeless T-Shirt.",
+      "image": "product/6/6_zeppelin.jpg",
+      "category": 4,
+      "purchase_price": 25,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Jeans",
+      "description": "Experience the classic charm of blue jeans with our timeless pair. Crafted with precision and a focus on fit, our jeans offer style and comfort in one package. From casual outings to dressier occasions, these versatile jeans complement any look with ease. Embrace the iconic fashion staple that has stood the test of time and become a symbol of effortless style.",
+      "image": "",
+      "category": 4,
+      "purchase_price": 60,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Candle Holder",
+      "description": "Add an elegant touch to your space with our exquisite candle holder. Crafted with artistic finesse and designed to complement any decor, this holder enhances the ambiance of any room. Whether you're creating a cozy atmosphere or setting the mood for a special occasion, our candle holder becomes the perfect centerpiece. Embrace the warmth and glow of candlelight with our captivating and elegant holder.",
+      "image": "product/8/8_Candle.jpg",
+      "category": 5,
+      "purchase_price": 35,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Wall Clock",
+      "description": "Infuse charm and functionality into your living space with our modern wall clock. Designed with contemporary aesthetics and precise timekeeping, this clock becomes a striking statement piece. Embrace the fusion of style and practicality, adding a touch of sophistication to any room. Keep track of time in an elegant manner and create an organized and visually appealing environment with our wall clock.",
+      "image": "",
+      "category": 5,
+      "purchase_price": 50,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "Dumbbells Set",
+      "description": "Achieve your fitness goals with our adjustable dumbbells set. Designed to provide a comprehensive workout, these versatile dumbbells allow you to customize your training intensity. From strength training to muscle toning, our dumbbells cater to all fitness levels. Embrace the convenience of compact and space-saving equipment that maximizes your potential. Take control of your fitness journey with our durable and easy-to-use dumbbells.",
+      "image": "product/10/10_dumble.jpg",
+      "category": 6,
+      "purchase_price": 120,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "Yoga Mat",
+      "description": "Enhance your yoga practice with our high-quality yoga mat. Designed for optimal comfort and stability, this mat provides a supportive surface for your exercises. From beginner to advanced yogis, our mat caters to various forms of yoga and fitness routines. Embrace the tranquility of your practice and create a space of serenity with our soft and durable yoga mat.",
+      "image": "",
+      "category": 6,
+      "purchase_price": 30,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "Building Blocks",
+      "description": "Encourage creativity and imagination with our colorful building blocks. Perfect for young minds and curious hands, these blocks offer endless possibilities for constructing and designing. Watch as kids engage in open-ended play, fostering cognitive development and motor skills. Embrace the joy of discovery and learning through play with our captivating building blocks.",
+      "image": "product/12/12_block.jpg",
+      "category": 7,
+      "purchase_price": 15,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "name": "Remote Control Car",
+      "description": "Unleash the excitement of remote-controlled fun with our RC car. Ready to conquer various terrains, this car promises thrilling adventures for kids and adults alike. With precise control and high-speed action, our RC car brings joy to every race. Embrace the thrill of driving and maneuvering, pushing the boundaries of excitement with our versatile remote control car.",
+      "image": "",
+      "category": 7,
+      "purchase_price": 50,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "name": "Basketball",
+      "description": "Experience the thrill of the game with our official size basketball. Crafted for superior grip and durability, this basketball ensures optimal performance on the court. From friendly pick-up games to intense competitions, our basketball becomes your loyal companion. Embrace the joy of teamwork, practice, and sportsmanship with our high-quality basketball.",
+      "image": "product/14/14_size-7-basketball.jpg",
+      "category": 8,
+      "purchase_price": 25,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "name": "Soccer Ball",
+      "description": "Kick-start the fun with our high-quality soccer ball. Designed for precision and control, this ball lets you unleash your soccer skills on the field. Whether you're practicing drills or playing a match, our soccer ball ensures a thrilling experience. Embrace the passion and camaraderie of the beautiful game with our reliable and performance-driven soccer ball.",
+      "image": "",
+      "category": 8,
+      "purchase_price": 30,
+      "creation_date": "2023-07-29T08:10:19.247Z",
+      "last_modified": "2023-07-29T08:10:19.247Z",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 26,
+    "fields": {
+      "name": "Xbox",
+      "description": "Experience the ultimate gaming console with Xbox! Immerse yourself in stunning graphics, powerful performance, and a vast library of games. From action-packed adventures to intense multiplayer battles, Xbox delivers an unparalleled gaming experience. With features like Xbox Live, you can connect with friends and compete online. Get ready for endless entertainment and gaming excitement with Xbox!",
+      "image": "product/26/26_xboxone22023-07-29T222857.618065.jpg",
+      "category": 1,
+      "purchase_price": 899,
+      "creation_date": "2023-07-29T22:28:57.618Z",
+      "last_modified": "2023-07-29T22:28:57.618Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 27,
+    "fields": {
+      "name": "Harry Potter and the Philosopher's Stone",
+      "description": "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry. Harry makes close friends and a few enemies during his first year at the school and with the help of his friends, Ron Weasley and Hermione Granger, he faces an attempted comeback by the dark wizard Lord Voldemort, who killed Harry's parents, but failed to kill Harry when he was just 15 months old.",
+      "image": "product/27/27_de302a0c-2c3e-40b9-ac72-143387f816822023-07-29T223112.197590.jpg",
+      "category": 2,
+      "purchase_price": 15,
+      "creation_date": "2023-07-29T22:31:12.198Z",
+      "last_modified": "2023-07-29T22:31:12.198Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.customer",
+    "pk": 1,
+    "fields": {
+      "first_name": "Тигран",
+      "last_name": "Саатчян",
+      "email": "mr.saatchyan@yandex.com",
+      "tel_number": "+995555253123",
+      "message": "Hello world",
+      "date_added": "2023-07-28T17:04:04.144Z"
+    }
+  },
+  {
+    "model": "catalog.contact",
+    "pk": 1,
+    "fields": {
+      "first_name": "Тигран",
+      "last_name": "Саатчян",
+      "email": "mr.saatchyan@yandex.com",
+      "tel_number": "+995 555 253 123",
+      "address": "ул. Георгия V Блистательного, Батуми, Грузия",
+      "date_added": "2023-07-29T08:10:19.249Z"
+    }
   }
-},
-{
-  "model": "catalog.category",
-  "pk": 2,
-  "fields": {
-    "name": "Books",
-    "description": "All about books"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 3,
-  "fields": {
-    "name": "Electronics",
-    "description": "All about electronics"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 4,
-  "fields": {
-    "name": "Clothing",
-    "description": "Fashionable clothing"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 5,
-  "fields": {
-    "name": "Home Decor",
-    "description": "Decorative items for home"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 6,
-  "fields": {
-    "name": "Fitness",
-    "description": "Fitness equipment and accessories"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 7,
-  "fields": {
-    "name": "Toys",
-    "description": "Fun and educational toys"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 8,
-  "fields": {
-    "name": "Sports",
-    "description": "Sports equipment and gear"
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 1,
-  "fields": {
-    "name": "PS4",
-    "description": "Sony PS4",
-    "image": "",
-    "category": 1,
-    "purchase_price": 400,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 2,
-  "fields": {
-    "name": "PS5",
-    "description": "Sony PS5",
-    "image": "",
-    "category": 1,
-    "purchase_price": 700,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 3,
-  "fields": {
-    "name": "The Great Gatsby",
-    "description": "F. Scott Fitzgerald's masterpiece",
-    "image": "",
-    "category": 2,
-    "purchase_price": 20,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 4,
-  "fields": {
-    "name": "To Kill a Mockingbird",
-    "description": "Harper Lee's classic novel",
-    "image": "",
-    "category": 2,
-    "purchase_price": 18,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 5,
-  "fields": {
-    "name": "Smartphone",
-    "description": "High-end smartphone",
-    "image": "",
-    "category": 3,
-    "purchase_price": 800,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 6,
-  "fields": {
-    "name": "T-Shirt",
-    "description": "Cotton T-Shirt",
-    "image": "product/6_zeppelin.jpg",
-    "category": 4,
-    "purchase_price": 25,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 7,
-  "fields": {
-    "name": "Jeans",
-    "description": "Blue jeans",
-    "image": "",
-    "category": 4,
-    "purchase_price": 60,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 8,
-  "fields": {
-    "name": "Candle Holder",
-    "description": "Elegant candle holder",
-    "image": "product/8_Candle.jpg",
-    "category": 5,
-    "purchase_price": 35,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 9,
-  "fields": {
-    "name": "Wall Clock",
-    "description": "Modern wall clock",
-    "image": "",
-    "category": 5,
-    "purchase_price": 50,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 10,
-  "fields": {
-    "name": "Dumbbells Set",
-    "description": "Adjustable dumbbells set",
-    "image": "product/10_dumble.jpg",
-    "category": 6,
-    "purchase_price": 120,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 11,
-  "fields": {
-    "name": "Yoga Mat",
-    "description": "High-quality yoga mat",
-    "image": "",
-    "category": 6,
-    "purchase_price": 30,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 12,
-  "fields": {
-    "name": "Building Blocks",
-    "description": "Colorful building blocks",
-    "image": "product/12_block.jpg",
-    "category": 7,
-    "purchase_price": 15,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 13,
-  "fields": {
-    "name": "Remote Control Car",
-    "description": "RC car with remote control",
-    "image": "",
-    "category": 7,
-    "purchase_price": 50,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 14,
-  "fields": {
-    "name": "Basketball",
-    "description": "Official size basketball",
-    "image": "product/14_size-7-basketball.jpg",
-    "category": 8,
-    "purchase_price": 25,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": true
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 15,
-  "fields": {
-    "name": "Soccer Ball",
-    "description": "High-quality soccer ball",
-    "image": "",
-    "category": 8,
-    "purchase_price": 30,
-    "creation_date": "2023-07-28T15:29:45.653Z",
-    "last_modified": "2023-07-28T15:29:45.653Z",
-    "is_active": false
-  }
-},
-{
-  "model": "catalog.contact",
-  "pk": 1,
-  "fields": {
-    "first_name": "Тигран",
-    "last_name": "Саатчян",
-    "email": "mr.saatchyan@yandex.com",
-    "tel_number": "+995 555 253 123",
-    "address": "ул. Георгия V Блистательного, Батуми, Грузия",
-    "date_added": "2023-07-28T15:29:45.655Z"
-  }
-}
 ]
