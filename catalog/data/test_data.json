@@ -1,0 +1,288 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Gaming",
+    "description": "All about gaming"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Books",
+    "description": "All about books"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Electronics",
+    "description": "All about electronics"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "name": "Clothing",
+    "description": "Fashionable clothing"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Home Decor",
+    "description": "Decorative items for home"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 6,
+  "fields": {
+    "name": "Fitness",
+    "description": "Fitness equipment and accessories"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 7,
+  "fields": {
+    "name": "Toys",
+    "description": "Fun and educational toys"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 8,
+  "fields": {
+    "name": "Sports",
+    "description": "Sports equipment and gear"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "PS4",
+    "description": "Sony PS4",
+    "image": "",
+    "category": 1,
+    "purchase_price": 400,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "PS5",
+    "description": "Sony PS5",
+    "image": "",
+    "category": 1,
+    "purchase_price": 700,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "The Great Gatsby",
+    "description": "F. Scott Fitzgerald's masterpiece",
+    "image": "",
+    "category": 2,
+    "purchase_price": 20,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "To Kill a Mockingbird",
+    "description": "Harper Lee's classic novel",
+    "image": "",
+    "category": 2,
+    "purchase_price": 18,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Smartphone",
+    "description": "High-end smartphone",
+    "image": "",
+    "category": 3,
+    "purchase_price": 800,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "T-Shirt",
+    "description": "Cotton T-Shirt",
+    "image": "product/6_zeppelin.jpg",
+    "category": 4,
+    "purchase_price": 25,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Jeans",
+    "description": "Blue jeans",
+    "image": "",
+    "category": 4,
+    "purchase_price": 60,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Candle Holder",
+    "description": "Elegant candle holder",
+    "image": "product/8_Candle.jpg",
+    "category": 5,
+    "purchase_price": 35,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Wall Clock",
+    "description": "Modern wall clock",
+    "image": "",
+    "category": 5,
+    "purchase_price": 50,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Dumbbells Set",
+    "description": "Adjustable dumbbells set",
+    "image": "product/10_dumble.jpg",
+    "category": 6,
+    "purchase_price": 120,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Yoga Mat",
+    "description": "High-quality yoga mat",
+    "image": "",
+    "category": 6,
+    "purchase_price": 30,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Building Blocks",
+    "description": "Colorful building blocks",
+    "image": "product/12_block.jpg",
+    "category": 7,
+    "purchase_price": 15,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Remote Control Car",
+    "description": "RC car with remote control",
+    "image": "",
+    "category": 7,
+    "purchase_price": 50,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Basketball",
+    "description": "Official size basketball",
+    "image": "product/14_size-7-basketball.jpg",
+    "category": 8,
+    "purchase_price": 25,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "name": "Soccer Ball",
+    "description": "High-quality soccer ball",
+    "image": "",
+    "category": 8,
+    "purchase_price": 30,
+    "creation_date": "2023-07-28T15:29:45.653Z",
+    "last_modified": "2023-07-28T15:29:45.653Z",
+    "is_active": false
+  }
+},
+{
+  "model": "catalog.contact",
+  "pk": 1,
+  "fields": {
+    "first_name": "Тигран",
+    "last_name": "Саатчян",
+    "email": "mr.saatchyan@yandex.com",
+    "tel_number": "+995 555 253 123",
+    "address": "ул. Георгия V Блистательного, Батуми, Грузия",
+    "date_added": "2023-07-28T15:29:45.655Z"
+  }
+}
+]
