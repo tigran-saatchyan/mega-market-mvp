@@ -10,10 +10,6 @@ main {
     overflow-y: hidden;
 }
 
-.container {
-
-
-}
 
 .sidebar {
     width: 280px;
@@ -58,6 +54,15 @@ body {
 .btn-toggle-nav a:focus {
     background-color: #d2f4ea;
 }
+
+.post_image-container {
+    width: 200px;
+    height: 0;
+    border-radius: var(--bs-card-border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
 
 .image-container {
     width: 350px;
@@ -129,6 +134,14 @@ body {
     max-width: 352px;
     min-height: 502px;
     max-height: 502px;
+}
+
+
+.post_card_size {
+    min-width: 634px;
+    max-width: 634px;
+    min-height: 248px;
+    max-height: 248px;
 }
 
 .card {

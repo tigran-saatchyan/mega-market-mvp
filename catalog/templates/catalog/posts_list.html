@@ -1,0 +1,32 @@
+{% extends "catalog/base.html" %}
+
+
+{% block title %}Blogue{% endblock %}
+{% block menu_blog_active %}active{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Блог </h1>
+            <a href="{% url 'catalog:create_post' %}" type="button" class="btn btn-primary btn-rounded">
+                Новый Пост
+            </a>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-6 my-3 d-flex justify-content-center">
+                    {% include 'catalog/includes/inc_post_card.html' with post=post %}
+                </div>
+            {% endfor %}
+            {% include 'catalog/includes/inc_paginator.html' with page_obj=page_obj %}
+            {% include 'catalog/includes/inc_footer.html' %}
+
+        </div>
+    </main>
+{% endblock %}

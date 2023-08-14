@@ -1,0 +1,35 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}Product{% endblock %}
+{% block menu_product_active %}active{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+            {% if category_name %}
+                <h1 class="display-4 fw-normal text-body-emphasis">{{ category_name }}</h1>
+            {% else %}
+                <h1 class="display-4 fw-normal text-body-emphasis">Продукты</h1>
+                <a href="{% url 'catalog:create_product' %}" type="button" class="btn btn-primary btn-rounded">Новый
+                    Продукт</a>
+            {% endif %}
+            {% if category_description %}
+                <p>{{ category_description }}</p>
+            {% endif %}
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+        <div class="row">
+            {% for product in products %}
+                <div class="col my-3 d-flex justify-content-center">
+                    {% include 'catalog/includes/inc_product_card.html' with product=product %}
+                </div>
+            {% endfor %}
+            {% include 'catalog/includes/inc_paginator.html' with page_obj=page_obj%}
+            {% include 'catalog/includes/inc_footer.html' %}
+        </div>
+    </main>
+{% endblock %}

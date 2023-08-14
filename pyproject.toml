@@ -15,6 +15,8 @@ bpython = "^0.24"
 
 [tool.poetry.group.develop.dependencies]
 python-dotenv = "^1.0.0"
+asyncio = "^3.4.3"
+aiosmtpd = "^1.4.4.post2"
 
 [build-system]
 requires = ["poetry-core"]

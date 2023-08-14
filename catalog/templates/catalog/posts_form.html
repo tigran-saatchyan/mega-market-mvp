@@ -1,0 +1,55 @@
+{% extends "catalog/base.html" %}
+{% load my_tags %}
+
+{% block title %}New Post{% endblock %}
+{% block menu_blog_active %}active{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">
+                {% if object %}
+                    Обновить Пост
+                {% else %}
+                    Создать новый пост
+                {% endif %}
+            </h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+        <div class="row justify-content-center">
+            <div class="justify-content-center align-items-center w-50">
+                <div class="col">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">
+                                {% if object %}
+                                    Обновить Пост
+                                {% else %}
+                                    Новый Пост
+                                {% endif %}
+                            </h3>
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <input class="btn btn-primary btn-lg" type="submit"
+                                        {% if object %}
+                                            value="Сохранить"
+                                        {% else %}
+                                            value="Создать"
+                                        {% endif %}/>
+                                <a href="{% url 'catalog:post_list' %}" class="btn btn-secondary btn-lg">Отменить</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% include 'catalog/includes/inc_footer.html' %}
+        </div>
+    </main>
+
+{% endblock %}

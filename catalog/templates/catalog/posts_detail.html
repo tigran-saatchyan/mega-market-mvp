@@ -1,0 +1,31 @@
+{% extends "catalog/base.html" %}
+{% load my_tags %}
+
+{% block title %}Catalog{% endblock %}
+{% block menu_blog_active %}active{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-lg-5 col-md-5 col-sm-6 position-sticky">
+                        <div class="white-box image-container">
+                            <img src="{% if post.image %}
+                            {{ post.image | media_path }}
+                            {% else %}
+                                https://placehold.co/630x630
+                            {% endif %}" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-8 px-5">
+                        <h3 class="card-title mt-5">{{ post.title }}</h3>
+                        <p class="mt-2">{{ post.content }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'catalog/includes/inc_footer.html' %}
+    </main>
+    {% include 'catalog/includes/inc_post_detail_style.html' %}
+{% endblock %}

@@ -2,7 +2,7 @@ from typing import Tuple
 
 from django.contrib import admin
 
-from catalog.models import Category, Product, Customer, Contact
+from catalog.models import Category, Product, Customer, Contact, Posts
 
 
 @admin.register(Category)
@@ -76,3 +76,21 @@ class ContactAdmin(admin.ModelAdmin):
         'email',
         'tel_number'
     )
+
+
+@admin.register(Posts)
+class PostAdmin(admin.ModelAdmin):
+    list_display: Tuple[str] = (
+        'id',
+        'title',
+        'content',
+        'creation_date',
+        'image',
+        'is_published'
+    )
+
+    list_display_links = ('title',)
+
+    list_filter = ('is_published',)
+
+    search_fields = ('title',)
