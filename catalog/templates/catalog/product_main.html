@@ -1,0 +1,29 @@
+{% extends "catalog/base.html" %}
+
+
+{% block title %}Catalog{% endblock %}
+{% block menu_main_active %}active{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Главная</h1>
+            <p class="fs-5 text-body-secondary">Вы находитесь на сайте, предназначенном для продажи товаров</p>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+        <div class="row">
+            {% for product in products %}
+                <div class="col my-3 d-flex justify-content-center">
+                    {% include 'catalog/includes/inc_product_card.html' with product=product %}
+                </div>
+            {% endfor %}
+
+            {% include 'catalog/includes/inc_footer.html' %}
+
+        </div>
+    </main>
+{% endblock %}

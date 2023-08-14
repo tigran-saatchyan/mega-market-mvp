@@ -7,7 +7,9 @@ NULLABLE: Dict[str, bool] = {'blank': True, 'null': True}
 
 
 def save_picture(model, picture):
+    app_name = __package__.split('.')[0]
     my_date = str(datetime.now().isoformat())
+
     picture_name = "".join(
         [
             "".join(picture.split('.')[:-1]),
@@ -17,9 +19,11 @@ def save_picture(model, picture):
         ]
     )
     if isinstance(model, Product):
-        return f"product/{model.pk}/{model.pk}_{picture_name}"
+        return f"{app_name}/product/{model.pk}/{model.pk}_{picture_name}"
     elif isinstance(model, Category):
-        return f"category/{model.pk}/{model.pk}_{picture_name}"
+        return f"{app_name}/category/{model.pk}/{model.pk}_{picture_name}"
+    elif isinstance(model, Posts):
+        return f"{app_name}/post/{model.pk}/{model.pk}_{picture_name}"
 
 
 class Category(models.Model):
@@ -86,6 +90,10 @@ class Product(models.Model):
         verbose_name='is active',
         default=True
     )
+    views_count: int = models.IntegerField(
+        default=0,
+        verbose_name='views count'
+    )
 
     def __str__(self) -> str:
         return self.name
@@ -96,7 +104,7 @@ class Product(models.Model):
     class Meta:
         verbose_name: str = 'Product'
         verbose_name_plural: str = 'Products'
-        ordering: Tuple[str] = ('last_modified',)
+        ordering: Tuple[str] = ('last_modified', '-views_count')
 
 
 class Customer(models.Model):
@@ -158,3 +166,34 @@ class Contact(models.Model):
         verbose_name: str = 'Contact'
         verbose_name_plural: str = 'Contacts'
         ordering: Tuple[str] = ('date_added',)
+
+
+class Posts(models.Model):
+    title = models.CharField(max_length=200, verbose_name='title')
+    slug = models.CharField(max_length=200, verbose_name='slug')
+    content = models.TextField(blank=True, verbose_name='content')
+    image = models.ImageField(
+        upload_to=save_picture,
+        blank=True,
+        verbose_name='image'
+    )
+    creation_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='creation date'
+    )
+    is_published = models.BooleanField(
+        default=False,
+        verbose_name='is published'
+    )
+    views_count = models.IntegerField(
+        default=0,
+        verbose_name='views count'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+        ordering = ('creation_date',)
