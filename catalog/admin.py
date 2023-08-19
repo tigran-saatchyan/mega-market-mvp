@@ -2,7 +2,8 @@ from typing import Tuple
 
 from django.contrib import admin
 
-from catalog.models import Category, Product, Customer, Contact, Posts
+from catalog.models import Category, Product, Customer, Contact, Posts, \
+    ProductVersion
 
 
 @admin.register(Category)
@@ -31,6 +32,24 @@ class ProductAdmin(admin.ModelAdmin):
 
     search_fields: Tuple[str] = ('name', 'description')
 
+
+# @admin.register(ProductVersion)
+# class ProductVersionAdmin(admin.ModelAdmin):
+#     list_display: Tuple[str] = (
+#         'id',
+#         'title',
+#         'content',
+#         'creation_date',
+#         'image',
+#         'is_published'
+#     )
+#
+#     list_display_links = ('title',)
+#
+#     list_filter = ('is_published',)
+#
+#     search_fields = ('title',)
+#
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):

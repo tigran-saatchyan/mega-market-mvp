@@ -11,6 +11,7 @@ Django = "^4.2.3"
 psycopg2 = "^2.9.6"
 pillow = "^10.0.0"
 bpython = "^0.24"
+pytils = "^0.4.1"
 
 
 [tool.poetry.group.develop.dependencies]

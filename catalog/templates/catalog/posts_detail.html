@@ -10,6 +10,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="col-lg-5 col-md-5 col-sm-6 position-sticky">
+                        <a href="{% url 'catalog:post_list' %}"
+                                class="icon-link gap-1 icon-link-hover">
+                            <svg class="bi">
+                                <use xlink:href="#chevron-left"></use>
+                            </svg>
+                            Назад
+                        </a>
                         <div class="white-box image-container">
                             <img src="{% if post.image %}
                             {{ post.image | media_path }}

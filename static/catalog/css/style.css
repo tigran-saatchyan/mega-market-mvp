@@ -10,6 +10,9 @@ main {
     overflow-y: hidden;
 }
 
+ul.errorlist li {
+    color: red;
+}
 
 .sidebar {
     width: 280px;

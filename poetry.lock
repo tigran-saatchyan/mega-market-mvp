@@ -518,6 +518,16 @@ files = [
 cli = ["click (>=5.0)"]
 
 [[package]]
+name = "pytils"
+version = "0.4.1"
+description = "Russian-specific string utils"
+optional = false
+python-versions = "^3.7"
+files = [
+    {file = "pytils-0.4.1.tar.gz", hash = "sha256:aa109b1bc0ec4bdb7c9768520110348d8aeb0706600e6cf641272e6850e26eab"},
+]
+
+[[package]]
 name = "pyxdg"
 version = "0.28"
 description = "PyXDG contains implementations of freedesktop.org standards in python."
@@ -629,4 +639,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b1468f80318e92fa9a1bb47af96a0f4ef571e33c52cb0200e41f6de549694554"
+content-hash = "d2ce0f9435cb36b4d3e6388bd5c619484151f4e29b3de5d95764d61f6585ae7b"

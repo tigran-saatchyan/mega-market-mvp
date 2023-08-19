@@ -94,6 +94,13 @@ class Product(models.Model):
         default=0,
         verbose_name='views count'
     )
+    current_version = models.ForeignKey(
+        'ProductVersion',
+        on_delete=models.SET_NULL,
+        verbose_name='текущая версия',
+        related_name='product_version',
+        **NULLABLE
+    )
 
     def __str__(self) -> str:
         return self.name
@@ -105,6 +112,32 @@ class Product(models.Model):
         verbose_name: str = 'Product'
         verbose_name_plural: str = 'Products'
         ordering: Tuple[str] = ('last_modified', '-views_count')
+
+
+class ProductVersion(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        verbose_name='продукт',
+
+    )
+    version = models.SmallIntegerField(verbose_name='версия')
+    version_name = models.CharField(
+        max_length=50,
+        verbose_name='название версии',
+        **NULLABLE
+    )
+    is_current = models.BooleanField(default=False)
+
+    def __str__(self):
+        result = f'{self.version} ({self.version_name})' \
+            if self.version_name else self.version
+        return result
+
+    class Meta:
+        verbose_name = 'Версия Продукта'
+        verbose_name_plural = 'Версии Продуктов'
+        ordering = ('version',)
 
 
 class Customer(models.Model):

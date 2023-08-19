@@ -26,10 +26,48 @@
                 <div class="col">
                     <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                         <div class="card-body p-4 p-md-5">
-                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Новый Товар</h3>
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Новый Продукт</h3>
                             <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                <p>{{ form.name.label_tag }} {{ form.name }}</p>
+                                <p>{{ form.name.errors }}</p>
+                                <p>{{ form.description.label_tag }} {{ form.description }}</p>
+                                <p>{{ form.description.errors }}</p>
+                                <p>{{ form.category.label_tag }} {{ form.category }}</p>
+                                <p>{{ form.purchase_price.label_tag }} {{ form.purchase_price }}</p>
+                                <p>{{ form.image.label_tag }} {{ form.image }}</p>
+                                <p>{{ form.is_active.label_tag }} {{ form.is_active }}</p>
+
+                                <h5 class="mb-2 pb-2">Версии продукта</h5>
+                                {{ version_formset.management_form }}
+                                {% for form in version_formset.forms %}
+                                    {% if form.version.value or form.version_name.value or form.is_current.value %}
+                                        <p>{{ form.version.label_tag }} {{ form.version }}</p>
+                                        <p>{{ form.version.errors }}</p>
+                                        <p>{{ form.version_name.label_tag }} {{ form.version_name }}</p>
+                                        <p>{{ form.version_name.errors }}</p>
+
+                                        <p>{{ form.is_current.label_tag }} {{ form.is_current }}</p>
+                                        {% if version_formset.non_form_errors %}
+                                            <ul class="errorlist">
+                                                {% for error in version_formset.non_form_errors %}
+                                                    <li>{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                        <p>{{ form.DELETE.label_tag }} {{ form.DELETE }}</p>
+
+                                    {% else %}
+                                        <p>{{ form.version.label_tag }} {{ form.version }}</p>
+                                        <p>{{ form.version_name.label_tag }} {{ form.version_name }}</p>
+                                        <p>{{ form.is_current.label_tag }} {{ form.is_current }}</p>
+                                        <p>{{ form.DELETE.label_tag }} {{ form.DELETE }}</p>
+                                    {% endif %}
+                                    {{ form.product }} {{ form.id }}
+                                    {% if not forloop.last %}
+                                        <hr>
+                                    {% endif %}
+                                {% endfor %}
                                 <input class="btn btn-primary btn-lg" type="submit"
                                         {% if object %}
                                             value="Сохранить"
@@ -37,16 +75,12 @@
                                             value="Создать"
                                         {% endif %}/>
                                 <a href="{% url 'catalog:product_list' %}" class="btn btn-secondary btn-lg">Отменить</a>
-
-
                             </form>
                         </div>
                     </div>
                 </div>
-
             </div>
             {% include 'catalog/includes/inc_footer.html' %}
         </div>
     </main>
-
 {% endblock %}
