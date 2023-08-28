@@ -40,7 +40,7 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         model = Product
         fields = (
             'name', 'description', 'image',
-            'category', 'purchase_price', 'is_active'
+            'category', 'price', 'is_active', 'user'
         )
 
 
@@ -67,7 +67,7 @@ class ProductVersionFormset(BaseInlineFormSet):
         for form in self.forms:
             if form.cleaned_data.get('DELETE') and form.cleaned_data.get(
                     'is_current'
-                    ):
+            ):
                 raise forms.ValidationError('Нельзя удалить активную версию')
         if current_version_counter == 0:
             raise forms.ValidationError(

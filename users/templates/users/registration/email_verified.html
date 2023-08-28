@@ -1,0 +1,31 @@
+{% extends "catalog/base.html" %}
+{% load my_tags %}
+
+{% block title %}Почта верифицированна{% endblock %}
+{% block menu_product_active %}active{% endblock %}
+
+{% block main %}
+    <main class="row overflow-y-auto">
+        <div class="row justify-content-center">
+            <div class="justify-content-center align-items-center w-50">
+                <div class="col">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <div id="content">
+                                {% if user.is_verified %}
+                                    <h2>Почта верифицирована!</h2>
+                                    Спасибо, мы очень рады видеть вас на нашей платформе.
+                                {% else %}
+                                    <h1>Ошибка верификации!</h1>
+                                    <h2>Что-то пошло не так.</h2>
+                                {% endif %}
+                            </div>
+                            <a href="/" class="btn btn-primary">На главную</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'catalog/includes/inc_footer.html' %}
+        </div>
+    </main>
+{% endblock %}

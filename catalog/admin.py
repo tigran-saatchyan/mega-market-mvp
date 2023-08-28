@@ -2,8 +2,7 @@ from typing import Tuple
 
 from django.contrib import admin
 
-from catalog.models import Category, Product, Customer, Contact, Posts, \
-    ProductVersion
+from catalog.models import Category, Product, Contact, Posts
 
 
 @admin.register(Category)
@@ -20,7 +19,8 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'description',
         'category',
-        'purchase_price',
+        'price',
+        'user',
         'is_active',
         'creation_date',
         'last_modified',
@@ -28,50 +28,13 @@ class ProductAdmin(admin.ModelAdmin):
 
     list_display_links: Tuple[str] = ('name',)
 
-    list_filter: Tuple[str] = ('is_active', 'category', 'creation_date')
+    list_filter: Tuple[str] = (
+        'is_active',
+        'category',
+        'creation_date',
+    )
 
     search_fields: Tuple[str] = ('name', 'description')
-
-
-# @admin.register(ProductVersion)
-# class ProductVersionAdmin(admin.ModelAdmin):
-#     list_display: Tuple[str] = (
-#         'id',
-#         'title',
-#         'content',
-#         'creation_date',
-#         'image',
-#         'is_published'
-#     )
-#
-#     list_display_links = ('title',)
-#
-#     list_filter = ('is_published',)
-#
-#     search_fields = ('title',)
-#
-
-@admin.register(Customer)
-class CustomerAdmin(admin.ModelAdmin):
-    list_display: Tuple[str] = (
-        'id',
-        'first_name',
-        'last_name',
-        'email',
-        'tel_number',
-        'message',
-    )
-
-    list_display_links: Tuple[str] = ('first_name', 'last_name')
-
-    list_filter: Tuple[str] = ('last_name', 'tel_number')
-
-    search_fields: Tuple[str] = (
-        'first_name',
-        'last_name',
-        'email',
-        'tel_number'
-    )
 
 
 @admin.register(Contact)
