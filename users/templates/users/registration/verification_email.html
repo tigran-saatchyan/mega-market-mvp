@@ -1,0 +1,13 @@
+Привет!
+<br>
+Пожалуйста, подтвердите свою электронную почту, перейдя по следующей ссылке:
+<p>
+    <a href="http://{{ domain }}{% url 'users:verify_email' uidb64=uid token=token %}"
+            style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">
+        Подтвердить Email
+    </a>
+</p>
+Если ссылка не работает, скопируйте и вставьте следующий адрес в адресную строку браузера:
+http://{{ domain }}{% url 'users:verify_email' uidb64=uid token=token %}
+<br>
+Спасибо!

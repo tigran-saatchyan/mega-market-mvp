@@ -1,4 +1,5 @@
 {% load static %}
+{% load my_tags %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,9 +11,11 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
             crossorigin="anonymous">
-    rel="stylesheet">
-    <link href="{% static 'catalog/css/style.css' %}"
-            rel="stylesheet">
+
+    {% block default_styles %}
+        <link href="{% static 'catalog/css/style.css' %}" rel="stylesheet">
+    {% endblock %}
+    {% block styles %}{% endblock %}
 </head>
 <body>
 {% include 'catalog/includes/inc_svg.html' %}
@@ -69,7 +72,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/contacts"
+                            <a href="{% url 'catalog:contacts' %}"
                                     class="nav-link text-white {% block menu_contacts_active %}{% endblock %}">
                                 <svg class="bi me-2" width="16" height="16">
                                     <use xlink:href="#people-circle"></use>
@@ -82,17 +85,33 @@
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                                 id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://avatars.githubusercontent.com/u/117544809?v=4" alt="" width="32"
+
+
+                            <img src="{% if user.avatar %}{{ user.avatar | media_path }}
+                                      {% else %}
+                                            https://avatars.githubusercontent.com/u/117544809?v=4
+                                        {% endif %}"
+                                    alt="" width="32"
                                     height="32"
                                     class="rounded-circle me-2">
-                            <strong>Пользователь</strong>
+                            <strong>
+                                {% if user.is_authenticated %}
+                                    {{ user.first_name }} {{ user.last_name }}
+                                {% else %}
+                                    Пользователь
+                                {% endif %}</strong>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">Профиль</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Выход</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'users:logout' %}">Выход</a></li>
+                            {% else %}
+                                <li><a class="dropdown-item" href="{% url 'users:login' %}">Вход</a></li>
+                                <li><a class="dropdown-item" href="{% url 'users:register' %}">Регистрация</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -114,6 +133,5 @@
 <script
         src="https://code.jquery.com/jquery-3.7.0.min.js"
         crossorigin="anonymous"></script>
-
 </body>
 </html>

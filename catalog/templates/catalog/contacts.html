@@ -1,7 +1,8 @@
 {% extends "catalog/base.html" %}
 {% load static %}
 {% block title %}Contacts{% endblock %}
-{% block menu_contact_active %}active{% endblock %}
+{% block styles %}<link href="{% static 'catalog/css/contacts_style.css' %}" rel="stylesheet">{% endblock %}
+{% block menu_contacts_active %}active{% endblock %}
 {% block header %}{% endblock %}
 {% block main %}
     <main class="dynamic-height">
@@ -104,6 +105,5 @@
                 </div>
             </div>
         </div>
-        {% include 'catalog/includes/inc_contacts_style.html' %}
     </main>
 {% endblock %}

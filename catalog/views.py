@@ -1,5 +1,6 @@
 """Views module"""
 from django.core.handlers.wsgi import WSGIRequest
+from django.core.mail import send_mail
 from django.forms import inlineformset_factory
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -11,7 +12,6 @@ from pytils.translit import slugify
 from catalog.forms import ProductForm, ProductVersionForm, PostForm, \
     ProductVersionFormset
 from catalog.models import Product, Contact, Category, Posts, ProductVersion
-from catalog.utils import send_mail
 
 
 class PostSlugifyMixin:
@@ -68,7 +68,12 @@ def contacts(request: WSGIRequest) -> HttpResponse:
                           f"{message}</p>"
 
         subject = f'Make Appointment with {first_name} {last_name}'
-        send_mail(subject=subject, message=message_to_send, to_email=email)
+        send_mail(
+            subject=subject,
+            from_email=None,
+            recipient_list=[email],
+            message=message_to_send
+        )
 
     return render(request, 'catalog/contacts.html', context)
 
@@ -135,6 +140,7 @@ class ProductCreateView(CreateView):
         )
 
         if self.request.method == 'POST':
+
             context['version_formset'] = VersionFormset(
                 self.request.POST
             )
@@ -144,8 +150,9 @@ class ProductCreateView(CreateView):
 
     def form_valid(self, form):
         context = self.get_context_data()
-        version_formset = context['version_formset']
+        form.instance.user = self.request.user
 
+        version_formset = context['version_formset']
         self.object = form.save()
         if version_formset.is_valid():
             version_formset.instance = self.object
@@ -236,9 +243,11 @@ class PostDetailView(DetailView):
             email = 'mr.saatchyan@yandex.com'
 
             send_mail(
+
                 subject=subject,
-                message=message,
-                to_email=email
+                from_email=None,
+                recipient_list=[email],
+                message=message
             )
         self.object.save()
         return self.object

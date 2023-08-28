@@ -47,7 +47,7 @@ urlpatterns = [
         name='category_products'
     ),
 
-    path('contacts/', contacts),
+    path('contacts/', contacts, name='contacts'),
 
     path(
         'blog/posts/list/',

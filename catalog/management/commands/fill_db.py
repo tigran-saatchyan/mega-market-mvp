@@ -11,7 +11,7 @@ from catalog.models import Category, Product, Contact
 
 class Command(BaseCommand):
     """
-    Custom Django management command to fill the DB with data
+    Custom Django management commands to fill the DB with data
     from a JSON file.
     """
 
@@ -22,7 +22,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         """
-        Add command-line arguments for the management command.
+        Add commands-line arguments for the management commands.
         """
         parser.add_argument(
             '-p',
@@ -50,7 +50,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         """
-        Handle the management command execution.
+        Handle the management commands execution.
 
         """
 
